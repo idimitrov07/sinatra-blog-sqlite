@@ -1,12 +1,12 @@
 require 'sinatra'
+require 'haml'
 
 get '/' do 
-	"Hello Sinatra! <a href='/another'>click</a>"
+	haml :index
 end
 
 get '/another' do 
-	"<a href='/'>Go Back</a>" +
-	"Hello again"
+	haml :another
 end
 
 get '/name/:name' do
