@@ -10,7 +10,8 @@ get '/another' do
 end
 
 get '/name/:name' do
-	"Your name is #{params[:name]}"
+	@name2 = params[:name]
+	haml :name
 end
 
 
