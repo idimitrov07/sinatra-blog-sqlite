@@ -14,6 +14,14 @@ get '/post/:id' do
 	haml :blogpost
 end
 
+get '/post' do 
+	haml :blogform
+end
+
+post '/post' do
+	new_post_id = db.new_post(params[:title], params[:body])
+	redirect "/post/#{new_post_id}"
+end
 
 
 
