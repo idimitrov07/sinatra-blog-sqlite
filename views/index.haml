@@ -1,4 +1,4 @@
-= haml :nav if @logged
+= haml :nav if logged_in?
 
 #posts
 	- @posts.each do |post|

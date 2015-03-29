@@ -36,9 +36,21 @@ post '/post' do
 end
 
 
+
+#add scret route to simulate logging in and out
+get '/login' do
+	session[:loggedin] = true
+	redirect '/'
+end
+
+get '/logout' do 
+	session.clear
+	redirect '/'
+end
+
 #check if user is logged in
 def logged_in?
-	@logged = session[:loggedin]
+	session[:loggedin]
 end
 
 
