@@ -1,18 +1,20 @@
 require 'sinatra'
 require 'haml'
+require './models/blog.rb'
+
+db = Blog.new()
 
 get '/' do 
+	@posts = db.posts()
 	haml :index
 end
 
-get '/another' do 
-	haml :another
+get '/post/:id' do
+	@post = db.post(params[:id])
+	haml :blogpost
 end
 
-get '/name/:name' do
-	@name2 = params[:name]
-	haml :name
-end
+
 
 
 
