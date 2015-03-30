@@ -1,2 +1,10 @@
-%a{href: "/post"}
-	%b New Blog post
+- if logged_in?
+	%a{href: "/logout"} Log out
+	%hr
+	%a{href: "/post"}
+		%b New Blog post
+- else 
+	%a{href: "/login"} Log in
+	%hr
+
+
